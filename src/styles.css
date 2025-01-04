@@ -1,0 +1,477 @@
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300; /* Use 200 or 300 for a thin look */
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to bottom, #faf8f5, #f2efe8);
+}
+
+.categoryDropdown {
+  padding: 8px;
+  font-family: "Georgia", serif;
+}
+
+.Bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white; /* Dark background color */
+  color: white; /* White text for visibility */
+}
+
+/* Left section (title) */
+.left p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+/* Right section (links) */
+.right a {
+  color: black;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.right a:hover {
+  color: #f0c040; /* Hover color */
+}
+
+.heroSection {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.imageContainer {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.imageContainer.right-enter {
+  animation: slideRightIn 0.5s forwards;
+}
+
+@keyframes slideLeftIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRightIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/* Other CSS rules remain the same */
+
+/* Image styling */
+.image {
+  width: 100%;
+  height: 93vh; /* Adjusted height to 30% of the viewport height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.navbar {
+  position: absolute;
+  opacity: 10;
+  top: 10px; /* Adjust as needed */
+  left: 40px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  gap: 20px; /* Adjust spacing between links */
+  padding: 10px;
+  background: rgba(22, 34, 36, 255); /* Semi-transparent background */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #f0c040; /* Adjust hover color */
+}
+
+.overlay {
+  position: absolute;
+  bottom: 20px; /* Position from the bottom */
+  left: 20px; /* Position from the left */
+  color: white; /* Text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+}
+
+.overlay h2 {
+  color: white;
+  font-size: 5rem; /* Adjust font size as needed */
+  margin: 0; /* Remove default margin */
+  font-family: "Lobster", cursive;
+}
+
+.exploreButton {
+  background-color: #4e6267; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding for button */
+  font-size: 1rem; /* Font size for button */
+  cursor: pointer; /* Change cursor on hover */
+  border-radius: 20px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  margin-top: 10px; /* Space between text and button */
+}
+
+.exploreButton:hover {
+  background-color: #d6b134; /* Darker shade on hover */
+}
+
+.dots {
+  position: absolute; /* Position the dots over the image */
+  bottom: 10px; /* Position the dots at the bottom */
+  left: 50%; /* Center them horizontally */
+  transform: translateX(-50%); /* Adjust position to center */
+  display: flex;
+  gap: 10px; /* Space between dots */
+}
+
+.dot {
+  height: 10px; /* Height of the dot */
+  width: 10px; /* Width of the dot */
+  border-radius: 50%; /* Make dots circular */
+  background-color: #bbb; /* Inactive dot color */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.dot.active {
+  background-color: #f0c040; /* Active dot color */
+}
+
+.dot:hover {
+  background-color: #d6b134; /* Darker shade on hover */
+}
+
+.arrivalsContainer {
+  display: flex; /* Use flexbox for layout */
+  margin: 20px; /* Add some margin around the container */
+}
+
+.rightSection {
+  flex: 2; /* Take up 2 parts of the flex space */
+  padding: 20px; /* Add padding for aesthetics */
+}
+
+.categories {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+  margin-left: 30px;
+}
+
+.categories li {
+  cursor: pointer; /* Change cursor to pointer */
+  font-size: 18px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.categories li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.searchInputWrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 12px;
+  padding-right: 100px; /* To create space for the dropdown */
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #ebe4db;
+}
+
+.categoryDropdown {
+  position: absolute;
+  right: 7px;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  width: 150px;
+  height: 35px; /* Adjusted height */
+  border: none;
+  font-size: 1em;
+  color: white;
+  background-color: #4e6267;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 5px 10px; /* Adjust padding if needed */
+}
+
+.categoryDropdown:focus {
+  outline: none;
+}
+
+.productGrid {
+  display: grid; /* Use grid layout for product images */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Space between grid items */
+}
+
+.productCard {
+  padding: 10px; /* Padding for product card */
+  text-align: center; /* Center text in product card */
+}
+
+.productImage {
+  width: 100%; /* Full width for images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.productName {
+  margin: 10px 0; /* Space between name and price */
+  font-size: 1.1rem; /* Adjust font size */
+}
+
+.productPrice {
+  font-weight: bold; /* Make price bold */
+  color: #333; /* Dark color for visibility */
+}
+
+.leftSection {
+  flex: 20px;
+}
+
+.leftSection h1 {
+  font-size: 2rem;
+  margin-left: 40px;
+  font-family: "Merriweather", serif;
+}
+
+.lower {
+  display: flex;
+  gap: 26px; /* Adds space between the cards */
+  justify-content: center; /* Centers the cards horizontally */
+  padding: 20px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Add a dark overlay */
+  z-index: 1; /* Ensure it is above the background but below the text */
+}
+
+.cardHeading {
+  position: relative; /* Position it over the card */
+  color: white; /* Set text color to white */
+  font-size: 24px; /* Adjust font size as needed */
+  z-index: 2; /* Ensure it is above the gradient */
+  margin: 10px 0; /* Adjust margin for vertical spacing */
+}
+
+.cardDescription {
+  position: relative; /* Position it over the card */
+  color: white; /* Set text color to white */
+  z-index: 2; /* Ensure it is above the gradient */
+  margin: 10px 0; /* Adjust margin for vertical spacing */
+}
+
+.exploreButton {
+  position: relative; /* Position it over the card */
+  z-index: 2; /* Ensure it is above the gradient */
+  margin: 10px 0; /* Adjust margin for vertical spacing */
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: white; /* Set background color for the button */
+  color: black; /* Set text color for the button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Optional: round the corners */
+  cursor: pointer; /* Show pointer on hover */
+}
+
+.card.card1 {
+  background-image: url("https://images.unsplash.com/photo-1480528813727-199fa7208f62?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+}
+
+.card.card2 {
+  background-image: url("https://images.unsplash.com/photo-1505022610485-0249ba5b3675?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  position: relative; /* Required for absolute positioning of the heading */
+  width: 45%;
+  height: 400px; /* Set a specific height */
+  margin: 20px; /* Add margin as needed */
+  overflow: hidden; /* Ensure that the gradient doesn't overflow */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+}
+
+.sale h1 {
+  font-family: "Merriweather", serif;
+}
+
+.sale {
+  text-align: center;
+}
+
+.saleGrid {
+  display: flex;
+  gap: 16px; /* Adds space between the cards */
+  justify-content: center; /* Centers the cards horizontally */
+  padding: 20px;
+}
+
+.sale1,
+.sale2,
+.sale3,
+.sale4 {
+  width: 400px;
+  height: 400px;
+  background-color: #f3f3f3; /* Light gray background */
+  background-image: url("https://images.unsplash.com/photo-1571513800374-df1bbe650e56?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  display: flex;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sale2,
+.sale4,
+.sale6 {
+  margin-top: 50px;
+}
+
+.footer {
+  background-color: #ebe4db;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+hr {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  text-align: center;
+  margin-left: 120px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: rgba(22, 34, 36, 255);
+  font-weight: 600;
+}
+
+.footer-newsletter {
+  display: flex;
+  gap: 5px;
+}
+
+.footer-newsletter input {
+  padding: 5px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.footer-newsletter button {
+  padding: 5px 10px;
+  font-size: 1em;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.footer-newsletter button:hover {
+  background-color: #412d2d;
+}
+
+.categoriesHeading {
+  margin-left: 40px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+.SizeHeading {
+  margin-left: 40px;
+}
+
+.categories {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categoryItem {
+  display: flex;
+  justify-content: space-between; /* Aligns name and count */
+  align-items: center;
+}
+
+.count {
+  font-size: 0.9em; /* Optional: slightly smaller font for the count */
+}
